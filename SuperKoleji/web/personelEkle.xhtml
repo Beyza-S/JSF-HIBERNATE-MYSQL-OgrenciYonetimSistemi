@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Personel Ekle</title>
+    <h:outputStylesheet library="resources" name="style.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <h1>Personel Ekle</h1>
+        <h:panelGrid columns="2" styleClass="form-table">
+            <h:outputLabel value="Kullanıcı Adı:" />
+            <h:inputText value="#{personelBean.personel.kullanici_adi}" />
+
+            <h:outputLabel value="Şifre:" />
+            <h:inputSecret value="#{personelBean.personel.sifre}" />
+            
+            <h:outputLabel value="TCK No:" />
+            <h:inputText value="#{personelBean.personel.tck_no}" />
+
+            <h:outputLabel value="Telefon:" />
+            <h:inputText value="#{personelBean.personel.telefon}" />
+
+            <h:outputLabel value="Adres:" />
+            <h:inputText value="#{personelBean.personel.adres}" />
+
+            <h:outputLabel value="Giriş Tarihi:" />
+            <h:inputText value="#{personelBean.personel.giris_tarihi}">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+
+            <h:outputLabel value="Çıkış Tarihi:" />
+            <h:inputText value="#{personelBean.personel.cikis_tarihi}">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+            
+
+            <h:commandButton value="Kaydet" action="#{personelBean.kaydet}" styleClass="btn btn-primary" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

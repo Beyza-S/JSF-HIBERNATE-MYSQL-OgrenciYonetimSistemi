@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Öğrenci Ekle</title>
+    <h:outputStylesheet library="resources" name="style.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <h1>Öğrenci Ekle</h1>
+        <h:panelGrid columns="2" styleClass="form-table">
+            <h:outputLabel value="Kullanıcı Adı:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.kullanici_adi}" />
+
+            <h:outputLabel value="Şifre:" />
+            <h:inputSecret value="#{ogrenciBean.ogrenci.sifre}" />
+            
+            <h:outputLabel value="TCK No:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.tck_no}" />
+
+            <h:outputLabel value="Telefon:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.telefon}" />
+
+            <h:outputLabel value="Adres:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.adres}" />
+
+            <h:outputLabel value="Giriş Tarihi:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.giris_tarihi}">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+
+            <h:outputLabel value="Çıkış Tarihi:" />
+            <h:inputText value="#{ogrenciBean.ogrenci.cikis_tarihi}">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+
+            
+
+            <h:commandButton value="Kaydet" action="#{ogrenciBean.kaydet}" styleClass="btn btn-primary" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

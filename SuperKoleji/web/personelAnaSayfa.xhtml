@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Personel Ana Sayfa</title>
+    <h:outputStylesheet library="resources" name="style.css"/>
+</h:head>
+<h:body>
+    <h1>Personel Ana Sayfa</h1>
+    <h:form>
+        <h:panelGrid columns="2" styleClass="form-table">
+            
+            <h:outputLabel value="Tck No:" />
+            <h:outputText value="#{personelBean.personel.tck_no}" />
+            
+            <h:outputLabel value="Kullanıcı Adı:" />
+            <h:outputText value="#{personelBean.personel.kullanici_adi}" />
+
+            <h:outputLabel value="Telefon:" />
+            <h:outputText value="#{personelBean.personel.telefon}" />
+
+            <h:outputLabel value="Adres:" />
+            <h:outputText value="#{personelBean.personel.adres}" />
+
+            <h:outputLabel value="Giriş Tarihi:" />
+            <h:outputText value="#{personelBean.personel.giris_tarihi}" />
+
+            <h:outputLabel value="Çıkış Tarihi:" />
+            <h:outputText value="#{personelBean.personel.cikis_tarihi}" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

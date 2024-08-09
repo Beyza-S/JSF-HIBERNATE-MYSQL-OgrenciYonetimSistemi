@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>SUPER KOLEJİ GİRİŞ</title>
+    <h:outputStylesheet library="resources" name="style.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <h1>Giriş Yap</h1>
+        <h:panelGrid columns="2" styleClass="form-table">
+            <h:outputLabel value="Kullanıcı Adı:" />
+            <h:inputText value="#{loginBean.kullanici_adi}" />
+
+            <h:outputLabel value="Şifre:" />
+            <h:inputSecret value="#{loginBean.sifre}" />
+
+            <h:commandButton value="Giriş" action="#{loginBean.login()}" styleClass="btn btn-primary" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

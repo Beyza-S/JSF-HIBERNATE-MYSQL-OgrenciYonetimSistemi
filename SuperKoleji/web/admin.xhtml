@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title>Admin Sayfası</title>
+        <h:outputStylesheet library="resources" name="style.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Admin Ana Sayfa</h1>
+            <div class="button-container">
+                <h:commandButton value="Personel Ekle" action="personelEkle?faces-redirect=true" styleClass="btn btn-primary" />
+                <h:commandButton value="Öğrenci Ekle" action="ogrenciEkle?faces-redirect=true" styleClass="btn btn-primary" />
+            </div>
+            <h2>Personel Bilgileri</h2>
+            <h:dataTable value="#{personelBean.personelList}" var="personel" styleClass="data-table">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{personel.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Kullanıcı Adı</f:facet>
+                        #{personel.kullanici_adi}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tck No</f:facet>
+                        #{personel.tck_no}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telefon</f:facet>
+                        #{personel.telefon}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Adres</f:facet>
+                        #{personel.adres}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Giriş Tarihi</f:facet>
+                        #{personel.giris_tarihi}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Çıkış Tarihi</f:facet>
+                        #{personel.cikis_tarihi}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Departman</f:facet>
+                    
+<!--                    <h:panelGrid rendered="#{!(personel.departmanlar eq null)}">
+                        
+                    <ui:repeat value="#{personel.departmanlar}" var="departman">
+                             <h:outputText value="#{personel.departmanlar.size() eq 0 ? '': departman.ad }" />
+                    </ui:repeat>
+
+                        
+                    </h:panelGrid>-->
+                    Bilgisayar Mühendisliği
+
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Güncelle</f:facet>
+                    <h:commandButton value="Güncelle" action="#{personelBean.guncelle(personel)}" styleClass="btn btn-warning" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Sil</f:facet>
+                    <h:commandButton value="Sil" action="#{personelBean.sil(personel)}" styleClass="btn btn-danger" />
+                </h:column>
+            </h:dataTable>
+
+            <h2>Öğrenci Bilgileri</h2>
+            <h:dataTable value="#{ogrenciBean.ogrenciList}" var="ogrenci" styleClass="data-table">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{ogrenci.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Kullanıcı Adı</f:facet>
+                        #{ogrenci.kullanici_adi}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tck No</f:facet>
+                        #{ogrenci.tck_no}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telefon</f:facet>
+                        #{ogrenci.telefon}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Adres</f:facet>
+                        #{ogrenci.adres}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Giriş Tarihi</f:facet>
+                        #{ogrenci.giris_tarihi}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Çıkış Tarihi</f:facet>
+                        #{ogrenci.cikis_tarihi}
+                </h:column>
+
+
+                <h:column>
+                    <f:facet name="header">Bölüm</f:facet>
+
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Güncelle</f:facet>
+                    <h:commandButton value="Güncelle" action="#{ogrenciBean.guncelle(ogrenci)}" styleClass="btn btn-warning" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Sil</f:facet>
+                    <h:commandButton value="Sil" action="#{ogrenciBean.sil(ogrenci)}" styleClass="btn btn-danger" />
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+    </h:body>
+</html>
